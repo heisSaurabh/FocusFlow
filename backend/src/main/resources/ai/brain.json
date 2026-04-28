@@ -1,0 +1,55 @@
+{
+  "intents": [
+    {
+      "id": "BEAT_PROCRASTINATION",
+      "keywords": ["procrastinat", "lazy", "starting", "hard to start", "motivated", "motivation"],
+      "response": "🚀 Beat procrastination with the '2-minute rule': If a task takes less than 2 minutes, do it NOW. For bigger tasks, start with just 5 minutes — getting started is the hardest part. Try breaking your task into the smallest possible first step."
+    },
+    {
+      "id": "DEEP_WORK_POMODORO",
+      "keywords": ["pomodoro", "focus", "concentrate", "distract", "attention"],
+      "response": "🍅 The Pomodoro Technique: Work for 25 minutes, then take a 5-minute break. After 4 sessions, take a longer 15-30 minute break. This boosts focus by creating urgency and preventing mental fatigue. Head to the Analytics tab to start your timer!"
+    },
+    {
+      "id": "OVERWHELM_STRESS",
+      "keywords": ["overwhelm", "too many", "stress", "anxious", "burnout"],
+      "response": "🧘 When overwhelmed: 1) Write down ALL tasks. 2) Pick ONLY 3 Most Important Tasks (MITs) for today. 3) Focus on ONE at a time. 4) Use the Eisenhower Matrix: Urgent+Important → Do Now, Not Urgent+Important → Schedule, Urgent+Not Important → Delegate, Rest → Delete."
+    },
+    {
+      "id": "SLEEP_ENERGY",
+      "keywords": ["sleep", "tired", "rest", "energy", "exhausted"],
+      "response": "😴 Sleep is the #1 productivity hack. Studies show 7-9 hours of sleep improves memory consolidation, decision-making, and creativity by up to 40%. Try to maintain a consistent sleep schedule and avoid screens 30 mins before bed."
+    },
+    {
+      "id": "STUDY_STRATEGY",
+      "keywords": ["study", "learn", "memorize", "exam", "test", "read"],
+      "response": "📚 Effective study techniques: 1) Active Recall — test yourself instead of rereading. 2) Spaced Repetition — review after 1 day, 3 days, 1 week. 3) Feynman Technique — explain concepts in simple words. 4) Pomodoro sessions for focused study blocks."
+    },
+    {
+      "id": "TIME_MANAGEMENT",
+      "keywords": ["time manag", "schedule tip", "priorit", "planning"],
+      "response": "⏰ Time Management Secrets: 1) Time-blocking: assign tasks to specific calendar blocks. 2) Eat the frog: do your hardest task FIRST each day. 3) Batch similar tasks together. 4) Limit email/messages to 2-3 scheduled check-ins per day."
+    },
+    {
+      "id": "GOAL_SETTING",
+      "keywords": ["goal", "plan", "organiz", "resolution", "habit", "routine", "achieve"],
+      "response": "🎯 SMART Goals framework: Make goals Specific, Measurable, Achievable, Relevant, and Time-bound. Use this app to create tasks with deadlines and let the AI schedule them for you. A weekly review every Sunday keeps you on track!"
+    },
+    {
+      "id": "FOCUS_MUSIC",
+      "keywords": ["music", "lofi", "noise", "listen", "song", "spotify"],
+      "response": "🎵 Background noise can improve focus for some! Low-volume, lyric-free music like Lofi or classical, or even brown noise, can block distracting sounds. Try embedding your favorite Spotify playlist right in the Pomodoro timer tab!"
+    },
+    {
+      "id": "BREAKS_AND_RECOVERY",
+      "keywords": ["break", "rest", "relax", "exhausted", "drain", "recover"],
+      "response": "🔋 Stepping away is productive. During your 5 or 15 minute breaks, get away from screens entirely. Stretch, hydrate, look at something far away (the 20-20-20 rule), or take a short walk. Quality breaks equal quality focus!"
+    },
+    {
+      "id": "GREETING",
+      "keywords": ["hello", "hi", "hey", "good morning", "good evening", "howdy"],
+      "response": "👋 Hello! I'm your FocusFlow Brain (Local AI). I run completely offline and private on your machine. Ask me for productivity advice or type a task like 'Study for exams tomorrow at 5pm for 2 hours' to auto-schedule it!"
+    }
+  ],
+  "fallback": "🤖 I'm the FocusFlow Brain! I'm still learning. Ask me about Focus techniques, Overcoming procrastination, Study strategies, Time management, Stress, or Sleep. You can also type a task command to auto-schedule it!"
+}

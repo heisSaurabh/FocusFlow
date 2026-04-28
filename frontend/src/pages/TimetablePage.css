@@ -1,0 +1,134 @@
+/* Tab row for timetable selectors */
+.tt-tabs { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; padding-bottom: 8px; }
+.tt-tab {
+    padding: 10px 22px; border-radius: 12px; border: 1px solid var(--border-light);
+    background: rgba(255, 255, 255, 0.03); color: var(--text-secondary); font-size: 0.85rem;
+    cursor: pointer; font-family: inherit; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex; align-items: center; gap: 8px; font-weight: 500;
+}
+.tt-tab:hover { background: var(--btn-secondary-bg); color: var(--text-primary); transform: translateY(-1px); }
+.tt-tab.active { 
+    background: var(--accent-violet-dim); 
+    border-color: var(--accent-violet); 
+    color: var(--accent-violet);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+}
+
+.active-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-emerald); box-shadow: 0 0 8px var(--accent-emerald); }
+
+/* Weekly Grid */
+.weekly-grid-wrap { 
+    border-radius: 16px; 
+    border: 1px solid var(--border-light);
+    background: var(--bg-elevated);
+    box-shadow: var(--shadow-lg);
+}
+
+.view-mode-toggle {
+    display: flex;
+    background: var(--bg-elevated);
+    padding: 4px;
+    border-radius: 12px;
+    border: 1px solid var(--border-faint);
+}
+
+.view-mode-toggle .btn {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+}
+
+.view-mode-toggle .btn.active {
+    background: var(--bg-surface);
+    color: var(--accent-violet);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.timeline-container {
+    width: 100%;
+}
+
+.gantt-wrap {
+    min-height: 400px;
+}
+
+/* Fix Gantt dark mode styles */
+._3_h6p { /* Task list header */
+    background-color: var(--bg-elevated) !important;
+    color: var(--text-primary) !important;
+}
+._3_h6p ._3_h6p {
+    border-color: var(--border-faint) !important;
+}
+._1_6t7 { /* Task row */
+    background-color: var(--bg-card) !important;
+    color: var(--text-secondary) !important;
+}
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+
+.weekly-grid {
+    display: grid;
+    grid-template-columns: 64px repeat(7, 1fr);
+    min-width: 800px;
+}
+
+.grid-day-header {
+    text-align: center; padding: 16px 8px; font-size: 0.8rem;
+    font-weight: 700; color: var(--text-primary); text-transform: uppercase;
+    letter-spacing: 0.1em; border-bottom: 1px solid var(--border-light);
+    background: var(--bg-elevated); position: sticky; top: 0; z-index: 10;
+}
+
+.grid-time-col { border-bottom: 1px solid var(--border-light); background: var(--bg-elevated); position: sticky; top: 0; z-index: 10; }
+
+.grid-time-label {
+    font-size: 0.7rem; color: var(--text-muted); text-align: center;
+    height: 60px; display: flex; align-items: flex-start;
+    justify-content: center; padding-top: 10px; border-right: 1px solid var(--border-faint);
+    font-weight: 600;
+}
+
+.grid-cell {
+    height: 60px; 
+    border-bottom: 1px dotted var(--border-faint);
+    border-right: 1px solid var(--border-faint);
+    background-image: linear-gradient(var(--border-faint) 1px, transparent 1px);
+    background-size: 100% 30px; /* Half-hour markers */
+}
+
+.grid-entry {
+    position: absolute; left: 4px; right: 4px; border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    overflow: hidden; padding: 6px 10px; z-index: 5;
+    cursor: default; font-size: 0.75rem; display: flex; flex-direction: column;
+    transition: all 0.2s ease; color: white;
+    background: linear-gradient(135deg, var(--accent-violet) 0%, #4f46e5 100%);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.grid-entry:hover { 
+    transform: scale(1.02); 
+    z-index: 20; 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.entry-title { font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 2px; }
+.entry-time { color: rgba(255,255,255,0.85); font-size: 0.65rem; font-weight: 500; }
+
+.entry-del {
+    position: absolute; top: 4px; right: 4px;
+    background: rgba(255,255,255,0.1); border: none; cursor: pointer; color: white;
+    font-size: 0.8rem; display: flex; align-items: center; padding: 4px;
+    border-radius: 6px; opacity: 0; transition: 0.2s;
+}
+
+.grid-entry:hover .entry-del { opacity: 1; }
+.entry-del:hover { background: var(--accent-red); }
+
+@media (max-width: 900px) {
+    .weekly-grid { min-width: 700px; }
+}

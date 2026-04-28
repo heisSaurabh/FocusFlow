@@ -1,0 +1,71 @@
+.pomodoro-tabs { display: flex; gap: 8px; margin-bottom: 24px; }
+.pomodoro-tab-btn {
+    padding: 8px 20px; border-radius: 99px; border: 1px solid var(--border-light);
+    cursor: pointer; background: transparent; color: var(--text-secondary);
+    font-size: 0.82rem; font-family: inherit; transition: 0.2s ease;
+}
+.pomodoro-tab-btn:hover { background: var(--btn-secondary-bg); color: var(--text-primary); }
+.pomodoro-tab-btn.active { background: var(--accent-violet-dim); border-color: var(--accent-violet); color: var(--accent-violet); }
+
+[data-theme="light"] .pomodoro-tab-btn.active {
+    background: rgba(234, 88, 12, 0.08);
+    border-color: rgba(234, 88, 12, 0.3);
+    color: #ea580c;
+}
+
+/* Layout */
+.pomodoro-layout {
+    display: grid; grid-template-columns: 1fr 360px; gap: 24px; align-items: start;
+}
+
+/* Timer Card */
+.pomodoro-card { display: flex; flex-direction: column; align-items: center; gap: 24px; padding: 36px 28px; }
+.pomodoro-task-select { width: 100%; max-width: 320px; margin-bottom: 8px; }
+.pomodoro-task-select .custom-select-trigger { text-align: left; }
+.pomodoro-task-select[disabled] { opacity: 0.6; cursor: not-allowed; }
+
+.session-tabs { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.session-tab {
+    padding: 7px 16px; border-radius: 99px; border: 1px solid var(--border-light);
+    cursor: pointer; background: transparent; color: var(--text-secondary);
+    font-size: 0.78rem; font-family: inherit; transition: 0.2s ease;
+}
+.session-tab:hover { background: var(--btn-secondary-bg); }
+.session-tab.active { font-weight: 600; }
+
+/* Timer circle */
+.timer-circle-wrap { position: relative; width: 200px; height: 200px; }
+.timer-svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.timer-display {
+    position: absolute; inset: 0; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 4px;
+}
+.timer-time { font-size: 2.4rem; font-weight: 700; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.05em; }
+.timer-label { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; }
+.tick-countdown { font-size: 1.3rem; font-weight: 800; animation: blobPulse 0.5s ease infinite alternate; }
+
+/* SVG circle styling for light mode */
+[data-theme="light"] .timer-svg circle:first-child {
+    stroke: var(--border-light);
+}
+
+/* Sessions */
+.session-row {
+    display: flex; align-items: center; gap: 12px; padding: 10px 0;
+    border-bottom: 1px solid var(--border-faint);
+}
+.session-row:last-child { border-bottom: none; }
+.session-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.session-body { flex: 1; }
+.session-type { font-size: 0.85rem; display: block; }
+.session-duration { font-size: 0.72rem; color: var(--text-muted); }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .pomodoro-layout { grid-template-columns: 1fr; }
+    .pomodoro-card { padding: 28px 20px; }
+}
+@media (max-width: 480px) {
+    .timer-circle-wrap { width: 170px; height: 170px; }
+    .timer-time { font-size: 2rem; }
+}

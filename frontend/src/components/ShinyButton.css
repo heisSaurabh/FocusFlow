@@ -1,0 +1,50 @@
+.shiny-btn-wrap {
+    position: relative;
+    display: inline-block;
+    padding: 2px;
+    border-radius: 9999px;
+    overflow: hidden;
+    cursor: pointer;
+    background: transparent;
+}
+
+.shiny-btn-wrap::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent 0%, var(--accent-violet) 40%, var(--accent-cyan) 50%, transparent 60%);
+    transform: translate(-50%, -50%);
+    animation: spin 4s linear infinite;
+    z-index: 0;
+}
+
+[data-theme="light"] .shiny-btn-wrap::before {
+    background: conic-gradient(from 0deg, transparent 0%, #ea580c 40%, #f59e0b 50%, transparent 60%);
+}
+
+.shiny-btn-inner {
+    position: relative;
+    z-index: 1;
+    background: var(--bg-surface);
+    color: var(--text-primary);
+    padding: 16px 40px;
+    border-radius: 9999px;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.shiny-btn-wrap:hover .shiny-btn-inner {
+    background: var(--bg-card);
+    box-shadow: 0 0 20px -5px var(--accent-violet);
+}
+
+[data-theme="light"] .shiny-btn-wrap:hover .shiny-btn-inner {
+    box-shadow: 0 0 20px -5px rgba(234, 88, 12, 0.3);
+}

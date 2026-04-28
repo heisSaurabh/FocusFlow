@@ -1,0 +1,52 @@
+# Environment variables (NEVER commit these)
+.env
+.env.local
+.env.production
+
+# Log files
+*.log
+*_logs.txt
+*_logs*
+backend_logs.txt
+backend_logs2.txt
+build3.log
+docker_build.log
+compile.log
+*.gz
+backend/logs/
+backend/boot-log.txt
+backend/compile_errors.txt
+backend/run-output.txt
+
+# Build artifacts
+frontend/dist/
+backend/target/
+backend/.m2/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+
+# Planning and GSD files
+.planning/
+gsd-template/
+gsd-init.json
+health.json
+health_utf8.json
+payload.json
+
+# Documentation/UML (not required for upload as per user)
+uml_diagrams.md
+ieee_srs.md
+
+# Uploads
+backend/uploads/
+

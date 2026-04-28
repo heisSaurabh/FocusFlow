@@ -1,0 +1,600 @@
+/* ── AI Tabs ─────────────────────────────────────────────── */
+.ai-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: 6px;
+    border: 1px solid var(--border-light);
+}
+
+.ai-tab {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: inherit;
+}
+
+.ai-tab:hover {
+    background: var(--btn-secondary-bg);
+    color: var(--text-primary);
+}
+
+.ai-tab.active {
+    background: var(--accent-violet);
+    color: white;
+    box-shadow: 0 2px 10px rgba(139, 92, 246, 0.3);
+}
+
+[data-theme="light"] .ai-tab.active {
+    background: #ea580c;
+    box-shadow: 0 2px 10px rgba(234, 88, 12, 0.2);
+}
+
+/* ── Chat ────────────────────────────────────────────────── */
+.chat-panel {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    height: 580px;
+    box-shadow: var(--shadow-card);
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.chat-msg {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.chat-msg.user {
+    flex-direction: row-reverse;
+}
+
+.chat-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    flex-shrink: 0;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    color: var(--text-secondary);
+}
+
+.user-av {
+    background: var(--accent-violet-dim);
+    border-color: var(--accent-violet);
+    color: var(--accent-violet);
+}
+
+[data-theme="light"] .user-av {
+    background: rgba(234, 88, 12, 0.1);
+    border-color: rgba(234, 88, 12, 0.3);
+    color: #ea580c;
+}
+
+.chat-bubble {
+    max-width: 70%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+.chat-msg.ai .chat-bubble {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    color: var(--text-primary);
+    border-radius: 2px 12px 12px 12px;
+}
+
+.chat-msg.user .chat-bubble {
+    background: var(--accent-violet);
+    color: white;
+    border-radius: 12px 2px 12px 12px;
+}
+
+[data-theme="light"] .chat-msg.user .chat-bubble {
+    background: #ea580c;
+}
+
+/* Typing indicator */
+.typing {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    padding: 14px 18px;
+}
+
+.typing span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent-violet);
+    animation: bounce 1.2s infinite;
+}
+
+.typing span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+    0%,
+    60%,
+    100% {
+        transform: translateY(0)
+    }
+    30% {
+        transform: translateY(-6px)
+    }
+}
+
+.chat-input-row {
+    display: flex;
+    gap: 10px;
+    padding: 12px 16px 16px;
+}
+
+/* ── NLP Result ──────────────────────────────────────────── */
+.nlp-result {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: 20px;
+}
+
+.nlp-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px;
+    background: var(--bg-card);
+    border-radius: var(--radius-sm);
+}
+
+.nlp-key {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    text-transform: capitalize;
+}
+
+.nlp-val {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* ── Schedule Slot ───────────────────────────────────────── */
+.schedule-slot {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border-faint);
+}
+
+.schedule-slot:last-child {
+    border-bottom: none;
+}
+
+.slot-day {
+    width: 40px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--accent-violet);
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+
+.slot-time {
+    width: 110px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 2px;
+    font-family: monospace;
+}
+
+.slot-body {
+    flex: 1;
+}
+
+.slot-body strong {
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* ── Priority Row ────────────────────────────────────────── */
+.priority-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border-faint);
+}
+
+.priority-row:last-child {
+    border-bottom: none;
+}
+
+.priority-rank {
+    width: 32px;
+    height: 32px;
+    background: var(--accent-violet);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+    color: white;
+}
+
+[data-theme="light"] .priority-rank {
+    background: #ea580c;
+}
+
+.priority-body {
+    flex: 1;
+}
+
+.priority-score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    flex-shrink: 0;
+}
+
+.score-val {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--accent-violet);
+}
+
+.score-lbl {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+}
+
+/* ── Insight Card ────────────────────────────────────────── */
+.insight-card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-light);
+    border-left: 3px solid var(--accent-violet);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .insight-card {
+    border-left-color: #ea580c;
+}
+
+/* ── Gemini Badge ─────────────────────────────────────── */
+.ai-gemini-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 100px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-light);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.ai-gemini-badge svg {
+    font-size: 1.1rem;
+    color: var(--accent-violet);
+}
+
+.ai-tab-icon {
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+}
+
+/* ── Chat Header ──────────────────────────────────────── */
+.chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border-light);
+    background: var(--bg-elevated);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.chat-bot-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.chat-bot-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--accent-violet);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: white;
+    position: relative;
+    box-shadow: 0 0 12px var(--accent-violet-dim);
+}
+
+[data-theme="light"] .chat-bot-avatar {
+    background: #ea580c;
+    box-shadow: 0 0 12px rgba(234, 88, 12, 0.2);
+}
+
+.chat-bot-online {
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+    width: 10px;
+    height: 10px;
+    background: #22c55e;
+    border-radius: 50%;
+    border: 2px solid var(--bg-card);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
+    50%       { box-shadow: 0 0 0 5px rgba(34,197,94,0); }
+}
+
+.chat-bot-name {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.chat-bot-status {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* AI avatars */
+.ai-av {
+    background: var(--accent-violet) !important;
+    border: none !important;
+    color: white !important;
+    box-shadow: 0 0 10px var(--accent-violet-dim);
+}
+
+[data-theme="light"] .ai-av {
+    background: #ea580c !important;
+    box-shadow: 0 0 10px rgba(234, 88, 12, 0.2);
+}
+
+/* Gemini tag inside bubble */
+.chat-gemini-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 8px;
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-faint);
+    padding-top: 6px;
+}
+
+/* ── Chat Input Area ──────────────────────────────────── */
+.chat-input-area {
+    border-top: 1px solid var(--border-light);
+    background: var(--bg-elevated);
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.chat-suggestions {
+    display: flex;
+    gap: 8px;
+    padding: 10px 16px 0;
+    flex-wrap: wrap;
+}
+
+.chat-suggestion {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 12px;
+    border-radius: 100px;
+    background: var(--accent-violet-dim);
+    border: 1px solid var(--accent-violet);
+    color: var(--accent-violet);
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: inherit;
+}
+
+[data-theme="light"] .chat-suggestion {
+    background: rgba(234, 88, 12, 0.06);
+    border-color: rgba(234, 88, 12, 0.2);
+    color: #ea580c;
+}
+
+.chat-suggestion:hover {
+    background: var(--btn-secondary-hover-bg);
+    transform: translateY(-1px);
+}
+
+.chat-send-btn {
+    padding: 10px 14px;
+    flex-shrink: 0;
+}
+
+/* ── NLP Card (Inside Chat) ───────────────────────────── */
+.nlp-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    margin-top: 10px;
+    width: 280px;
+    box-shadow: var(--shadow-card);
+    animation: slideUp 0.3s ease-out;
+}
+
+.nlp-card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--border-faint);
+    padding-bottom: 8px;
+}
+
+.nlp-card-icon {
+    color: var(--accent-violet);
+    font-size: 1rem;
+}
+
+.nlp-card-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.nlp-card-field {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+}
+
+.nlp-card-key {
+    color: var(--text-muted);
+}
+
+.nlp-card-val {
+    color: var(--text-primary);
+    font-weight: 500;
+    text-align: right;
+    max-width: 60%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.nlp-card-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+/* ── AI Status Pill ───────────────────────────────────── */
+.ai-status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid var(--border-light);
+}
+
+.ai-status-pill.gemini {
+    background: rgba(34, 197, 94, 0.1);
+    color: #22c55e;
+    border-color: rgba(34, 197, 94, 0.3);
+}
+
+.ai-status-pill.local {
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+    border-color: rgba(245, 158, 11, 0.3);
+}
+
+.ai-engine-badge {
+    color: var(--text-muted);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+/* ── NLP Hint Banner ──────────────────────────────────── */
+.nlp-hint-banner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background: var(--bg-elevated);
+    border-bottom: 1px solid var(--border-faint);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.nlp-hint-banner svg {
+    color: var(--accent-violet);
+    font-size: 1.1rem;
+}
+
+[data-theme="light"] .nlp-hint-banner svg {
+    color: #ea580c;
+}
+
+.nlp-hint-banner em {
+    color: var(--text-primary);
+    font-style: normal;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .chat-panel { height: 480px; }
+    .chat-bubble { max-width: 85%; }
+    .ai-tabs { gap: 4px; }
+    .ai-tab { padding: 8px 14px; font-size: 0.8rem; }
+}
+
+@media (max-width: 480px) {
+    .nlp-card { width: 240px; }
+    .chat-suggestions { display: none; }
+}
